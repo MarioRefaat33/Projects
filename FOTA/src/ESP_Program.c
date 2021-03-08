@@ -14,7 +14,13 @@
 #include "STK_Interface.h"
 #include "DIO_Interface.h"
 
-volatile u8 ResponseArray[10000]={0};
+volatile u8 ResponseArray[5000]={0};
+void WIFI_Array_Clear(void){
+
+	for(int x=0;x<=2000;x++){
+		ResponseArray[x]=0;
+	}
+}
 void WIFImod_voidInit(void){
 	u8 state=0;
 
@@ -23,14 +29,14 @@ void WIFImod_voidInit(void){
 	//state=validate();
 	while (state==0)
 	{
-		MSTK_voidSetBusyWait(3000000);
+		//MSTK_voidSetBusyWait(3000000);
 		/*ENABLE ECHO TO SEE THROW YAT PROGRAM */
 		MUSART1_voidTransmit("ATE1\r\n");
 		state=validate();
 	}
 	state=0;//RETURN STATE TO DEFUALT VALUE AGAIN
 	while (state==0)
-	{		MSTK_voidSetBusyWait(3000000);
+	{		//MSTK_voidSetBusyWait(3000000);
 	/*  SET WIFI MODE   */
 	MUSART1_voidTransmit("AT+CWMODE=1\r\n");
 
@@ -43,8 +49,8 @@ void WIFImod_ConnectToNetwork(u8* SSID,u8* Password)
 while (state==0)
 {
 	/*CONNECT TO WIFI*/
-	MSTK_voidSetBusyWait(5000000);
-	MSTK_voidSetBusyWait(5000000);
+	//MSTK_voidSetBusyWait(5000000);
+	//MSTK_voidSetBusyWait(5000000);
 	MUSART1_voidTransmit("AT+CWJAP=\"" );
 	MUSART1_voidTransmit( SSID );
 	MUSART1_voidTransmit(  "\",\"" );
@@ -61,7 +67,7 @@ void WIFImod_ConnectToServer(u8* Copy_u8Domain, u8* Copy_u8Port)
 
 while (state==0){
 
-	MSTK_voidSetBusyWait(3000000);
+	//MSTK_voidSetBusyWait(3000000);
 	/*CONNECT TO IP OF SERVER THROW TCP PROTOCOL*/
 	MUSART1_voidTransmit(  "AT+CIPSTART=\"TCP\",\"" );
 	MUSART1_voidTransmit(  Copy_u8Domain );
@@ -76,7 +82,7 @@ while (state==0){
 void  WIFImod_SendCharsNumbers(u8 * Copy_u8Length )
 {u8 state=0;
 while (state==0){
-	MSTK_voidSetBusyWait(6000000);
+	//MSTK_voidSetBusyWait(6000000);
 	/*NUMBER OF CARACTERS WILL SEND AFTER THIS COMMAND*/
 	MUSART1_voidTransmit(  "AT+CIPSEND=" );
 	MUSART1_voidTransmit( Copy_u8Length );//the length of character
@@ -89,10 +95,10 @@ while (state==0){
 }
 void    ESP8266_u8ReceiveHttpReq( u8 * Copy_u8ChannelID )
 {
-	u8 data=0;
+	//u8 data=0;
 	u8 state=0;
-	u32 counter=0;
-	u8 temp=0;
+	//u32 counter=0;
+	//u8 temp=0;
 	while (state==0){
 		//MSTK_voidSetBusyWait(3000000);
 		WIFImod_ConnectToServer("162.253.155.226", "80");
@@ -127,7 +133,7 @@ u16    ESP8266_u8ReceivePageNumber( u8 * Copy_u8ChannelID)
 	volatile u8 page_number_2=0;
 
 	u8 state=0;
-	u32 counter=0;
+	//u32 counter=0;
 	u8 temp=0;
 	while (state==0){
 		WIFImod_ConnectToServer("162.253.155.226", "80");
@@ -159,13 +165,13 @@ u16    ESP8266_u8ReceivePageNumber( u8 * Copy_u8ChannelID)
 
 }
 void ESP8266_u8SendHttpReq( u8 * Copy_u8PageID ){
-	u8 data=0;
+	//u8 data=0;
 	u8 state=0;
 	while (state==0){
 		WIFImod_ConnectToServer("162.253.155.226", "80");
 
 		WIFImod_SendCharsNumbers("75");
-		MSTK_voidSetBusyWait(3000000);
+		//MSTK_voidSetBusyWait(3000000);
 
 		/*SEND REQUEST TO PHP WITH NUMBER OF PAGE I WANT TO READ */
 		MUSART1_voidTransmit(  "GET /script.php?command=1&page_no=");
@@ -174,18 +180,33 @@ void ESP8266_u8SendHttpReq( u8 * Copy_u8PageID ){
 		//MUSART1_voidTransmit(  "GET /test.php?apples=56&oranges=23 HTTP/1.1\r\nHost: abanoub.freevar.com\r\n\r\n" );
 		state=validate();
 	}
-	for(int x=0;x<=5000;x++){
-		ResponseArray[x]=0;
+	 WIFI_Array_Clear();
+
+}
+void ESP8266_u8SendHttpReq_clear_buffer( void ){
+
+	u8 state=0;
+	while (state==0){
+		WIFImod_ConnectToServer("162.253.155.226", "80");
+
+		WIFImod_SendCharsNumbers("65");
+		//MSTK_voidSetBusyWait(3000000);
+
+		/*SEND REQUEST TO PHP WITH NUMBER OF PAGE I WANT TO READ */
+		MUSART1_voidTransmit(  "GET /script.php?command=2 HTTP/1.1\r\nHost: abanoub.freevar.com\r\n\r\n");
+		state=validate();
 	}
+	 WIFI_Array_Clear();
+
 }
 void ESP8266_u8SendHttpReq_overpage( u8 * Copy_u8PageID ){
-	u8 data=0;
+	//u8 data=0;
 	u8 state=0;
 	while (state==0){
 		WIFImod_ConnectToServer("162.253.155.226", "80");
 
 		WIFImod_SendCharsNumbers("76");
-		MSTK_voidSetBusyWait(3000000);
+		//MSTK_voidSetBusyWait(3000000);
 
 		/*SEND REQUEST TO PHP WITH NUMBER OF PAGE I WANT TO READ */
 		MUSART1_voidTransmit(  "GET /script.php?command=1&page_no=");
@@ -194,9 +215,8 @@ void ESP8266_u8SendHttpReq_overpage( u8 * Copy_u8PageID ){
 		//MUSART1_voidTransmit(  "GET /test.php?apples=56&oranges=23 HTTP/1.1\r\nHost: abanoub.freevar.com\r\n\r\n" );
 		state=validate();
 	}
-	for(int x=0;x<=5000;x++){
-		ResponseArray[x]=0;
-	}
+	 WIFI_Array_Clear();
+
 }
 static u8 validate(void)
 {

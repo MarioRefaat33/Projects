@@ -106,27 +106,3 @@ void MGPIO_VidSetPinValue( u8 Copy_u8Port , u8 Copy_u8Pin , u8 u8Copy_u8Value ){
 
 }
 
-u8   MGPIO_u8GetPinValue( u8 Copy_u8Port , u8 Copy_u8Pin ){
-
-	u8 LOC_u8Result = 0 ;
-
-	switch(Copy_u8Port)
-	{
-	case GPIOA:
-		LOC_u8Result = GET_BIT( GPIOA_IDR , Copy_u8Pin );
-
-		break;
-	case GPIOB:
-
-		LOC_u8Result = GET_BIT( GPIOB_IDR , Copy_u8Pin );
-
-		break;
-	case GPIOC:
-
-		LOC_u8Result = GET_BIT( GPIOC_IDR , Copy_u8Pin );
-
-		break;
-	}
-	return LOC_u8Result;
-}
-

@@ -26,13 +26,13 @@
 
 void Parser_voidParseRecord(u8* Copy_u8BufData);
 
-extern volatile u8 ResponseArray[10000]; /*array which contain the page of hexa  */
+extern volatile u8 ResponseArray[5000]; /*array which contain the page of hexa  */
 
 volatile u8  u8RecBuffer[100] = {0}  ;
 volatile u16  u8RecCounter    = 0;
-volatile u8  u8TimeOutFlag   = 0;
+/*volatile u8  u8TimeOutFlag   = 0;
 volatile u16 u16TimerCounter = 0;
-volatile u8  u8BLWriteReq    = 1;
+volatile u8  u8BLWriteReq    = 1;*/
 typedef void (*Function_t)(void);
 Function_t addr_to_call = 0;
 
@@ -121,7 +121,7 @@ int main(void)
 				page_array[1]='\0';
 
 				ESP8266_u8SendHttpReq(page_array);
-				MSTK_voidSetBusyWait(10000000);
+				//MSTK_voidSetBusyWait(10000000);
 
 				ESP8266_u8ReceiveHttpReq("abanoub.freevar.com");
 				/*burn page*/
@@ -136,7 +136,7 @@ int main(void)
 				page_array[2]='\0';
 
 				ESP8266_u8SendHttpReq_overpage(page_array);
-				MSTK_voidSetBusyWait(10000000);
+				//MSTK_voidSetBusyWait(10000000);
 
 				//WIFImod_SendCharsNumbers("43" );
 				ESP8266_u8ReceiveHttpReq("abanoub.freevar.com");
@@ -145,6 +145,8 @@ int main(void)
 				dividepage_parselines();
 			}
 		}
+		ESP8266_u8SendHttpReq_clear_buffer();
+
 		func();
 
 	}

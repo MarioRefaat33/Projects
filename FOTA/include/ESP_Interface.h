@@ -16,5 +16,7 @@ void ESP8266_u8ReceiveHttpReq( u8 * Copy_u8ChannelID );
 u16    ESP8266_u8ReceivePageNumber( u8 * Copy_u8ChannelID);
 void    ESP8266_u8SendHttpReq( u8 * Copy_u8ChannelID );
 void ESP8266_u8SendHttpReq_overpage( u8 * Copy_u8PageID );
+void ESP8266_u8SendHttpReq_clear_buffer( void );
+void WIFI_Array_Clear(void);
 
 #endif /* ESP_INTERFACE_H_ */
