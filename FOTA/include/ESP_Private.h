@@ -9,5 +9,5 @@
 #define ESP_PRIVATE_H_
 
 static u8 validate(void);
-static u8 result(void);
+
 #endif /* ESP_PRIVATE_H_ */

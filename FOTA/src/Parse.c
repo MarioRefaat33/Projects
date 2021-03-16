@@ -8,6 +8,7 @@
 #include "BIT_MATH.h"
 
 #include "FPEC_interface.h"
+#include "parse.h"
 
 u16 Data[100] = {0};
 u32 Address= 0x08000000;

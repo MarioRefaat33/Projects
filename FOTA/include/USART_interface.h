@@ -22,8 +22,9 @@
 void MUSART1_voidInit(void);
 
 void MUSART1_voidTransmit(char *arr);
-
 u8 MUART_u8Recieve(void);
+void MUSART1_voidSetCallBack(void (*ptr) (void) );
+void MUSART1_VidClearFlags( void );
 
 #endif
 

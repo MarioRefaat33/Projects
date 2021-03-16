@@ -9,14 +9,15 @@
 #define ESP_INTERFACE_H_
 
 void WIFImod_voidInit(void);
-void WIFImod_ConnectToNetwork(u8* SSID,u8* Password);
-void WIFImod_ConnectToServer(u8* Copy_u8Domain, u8* Copy_u8Port);
-void  WIFImod_SendCharsNumbers(u8 * Copy_u8Length );
-void ESP8266_u8ReceiveHttpReq( u8 * Copy_u8ChannelID );
-u16    ESP8266_u8ReceivePageNumber( u8 * Copy_u8ChannelID);
-void    ESP8266_u8SendHttpReq( u8 * Copy_u8ChannelID );
-void ESP8266_u8SendHttpReq_overpage( u8 * Copy_u8PageID );
+void WIFImod_ConnectToNetwork(char* SSID,char* Password);
+void WIFImod_ConnectToServer(char* Copy_u8Domain, char* Copy_u8Port);
+void WIFImod_SendCharsNumbers(char * Copy_u8Length );
+void ESP8266_u8ReceiveHttpReq( char * Copy_u8ChannelID );
+u16  ESP8266_u8ReceivePageNumber( char * Copy_u8ChannelID);
+void ESP8266_u8SendHttpReq( char * Copy_u8ChannelID );
+void ESP8266_u8SendHttpReq_overpage( char * Copy_u8PageID );
 void ESP8266_u8SendHttpReq_clear_buffer( void );
 void WIFI_Array_Clear(void);
+void ESP8266_voidClearBuffer(void);
 
 #endif /* ESP_INTERFACE_H_ */

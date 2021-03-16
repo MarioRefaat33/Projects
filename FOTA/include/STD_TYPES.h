@@ -15,5 +15,6 @@ typedef unsigned long  int   u32;
 typedef signed char        s8 ;
 typedef signed short int   s16;
 typedef signed long  int   s32; 
+#define NULL_PTR            ((void*)0)
 
 #endif

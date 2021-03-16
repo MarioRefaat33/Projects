@@ -7,6 +7,7 @@ C_SRCS += \
 ../src/DIO_program.c \
 ../src/ESP_Program.c \
 ../src/FPEC_program.c \
+../src/NVIC_Program.c \
 ../src/Parse.c \
 ../src/RCC_program.c \
 ../src/STK_program.c \
@@ -17,6 +18,7 @@ OBJS += \
 ./src/DIO_program.o \
 ./src/ESP_Program.o \
 ./src/FPEC_program.o \
+./src/NVIC_Program.o \
 ./src/Parse.o \
 ./src/RCC_program.o \
 ./src/STK_program.o \
@@ -27,6 +29,7 @@ C_DEPS += \
 ./src/DIO_program.d \
 ./src/ESP_Program.d \
 ./src/FPEC_program.d \
+./src/NVIC_Program.d \
 ./src/Parse.d \
 ./src/RCC_program.d \
 ./src/STK_program.d \
