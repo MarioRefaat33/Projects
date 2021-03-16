@@ -29,13 +29,13 @@ void MUSART_CallBack(void){
 void WIFImod_voidInit(void){
 	MUSART1_voidSetCallBack(MUSART_CallBack);
 	u8 state=0;
-	while (state==0){
+	/*while (state==0){
 		MUSART1_voidTransmit("AT\r\n");
 		MSTK_voidSetBusyWait( 3000000 );
 
 		state=validate();
 	}
-	state=0;
+	state=0;*/
 	counter=0;
 
 	while (state==0){

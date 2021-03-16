@@ -18,7 +18,7 @@
 #include "parse.h"
 
 extern u8 ResponseArray[10000]; /*array which contain the page of hexa  */
- u8  u8RecBuffer[100]   ;
+u8  u8RecBuffer[100]   ;
 u16  u8RecCounter = 0   ;
 typedef void (*Function_t)(void);
 Function_t addr_to_call = 0;
@@ -56,13 +56,11 @@ void dividepage_parselines(void){
 		u8RecCounter++;
 	}
 
-		for(u16 i=0;i<10000;i++){
-			ResponseArray[i]=0;
-		}
+	for(u16 i=0;i<10000;i++){
+		ResponseArray[i]=0;
+	}
 
 }
-
-
 
 int main(void){
 	char page_array[3]={0};                       /*array of page number*/
@@ -103,9 +101,18 @@ int main(void){
 				ESP8266_u8ReceiveHttpReq("abanoub.freevar.com");
 				dividepage_parselines();
 			}
-			else if (10<=i){
+			else if ((10<=i)&&(i<20)){
 				page_array[0]=1+48;
 				page_array[1]=((i%10)+48);
+				page_array[2]='\0';
+				ESP8266_u8SendHttpReq_overpage(page_array);
+				ESP8266_u8ReceiveHttpReq("abanoub.freevar.com");
+				dividepage_parselines();
+			}
+			else if (20<=i)
+			{
+				page_array[0]=2+48;
+				page_array[1]=((i%20)+48);
 				page_array[2]='\0';
 				ESP8266_u8SendHttpReq_overpage(page_array);
 				ESP8266_u8ReceiveHttpReq("abanoub.freevar.com");
