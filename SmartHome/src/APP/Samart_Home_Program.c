@@ -319,8 +319,7 @@ void Smart_Home()
 		}
 		if (data_2=='2'){
 			H_Motor_On();
-			LCD_VidSetPositin_FourBit(0,0);
-			LCD_VidSendString_FourBit("Fan ON          ");
+			LCD_VidSetPositin_FourBit(0,0);			LCD_VidSendString_FourBit("Fan ON          ");
 		}
 		else if (data_2=='3'){
 			H_Motor_Off();

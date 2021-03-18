@@ -62,6 +62,8 @@ void dividepage_parselines(void){
 
 }
 
+
+
 int main(void){
 	char page_array[3]={0};                       /*array of page number*/
 	u8 page_number=0;
@@ -79,7 +81,7 @@ int main(void){
 	MSTK_voidInit();                            /*init timer*/
 
 	WIFImod_voidInit();                         /*init WIFI */
-	WIFImod_ConnectToNetwork("1234","11111111");
+	WIFImod_ConnectToNetwork("Elsoudy 2","2512@WiFi97*152");
 	ESP8266_u8ReceiveHttpReq("abanoub.freevar.com");
 	/*to Read text file and check if user want to burn new application or execute old application */
 	while(ResponseArray [u8RecCounter] != ':'){
@@ -109,14 +111,15 @@ int main(void){
 				ESP8266_u8ReceiveHttpReq("abanoub.freevar.com");
 				dividepage_parselines();
 			}
-			else if (20<=i)
-			{
+			else if (20<=i){
+
 				page_array[0]=2+48;
 				page_array[1]=((i%20)+48);
 				page_array[2]='\0';
 				ESP8266_u8SendHttpReq_overpage(page_array);
 				ESP8266_u8ReceiveHttpReq("abanoub.freevar.com");
 				dividepage_parselines();
+
 			}
 		}
 		ESP8266_u8SendHttpReq_clear_buffer();
