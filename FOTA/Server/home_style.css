@@ -1,0 +1,206 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	background-image	:url(Smart_homes.jpg);
+	background-size 	:cover;
+	background-position	:center;
+	font-family			:sans-serif;
+}
+h1{
+	text-align			: center;
+	margin-bottom		: 20px;
+	color				: #0000cc;
+	background-color	: #ccccff;
+	border-radius		: 8px;
+	#padding			: 15px 32px;
+
+	
+}
+h2{
+	text-align			:center;
+	margin-bottom		:20px;
+	color				:#e60000;
+
+}
+h3{
+	text-align			:center;
+	margin-bottom		:none;
+	color				:#003399;
+	background-color	: none;
+
+}
+.button {
+  background-color: #999966; /* Green */
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#led_on
+{
+ 
+  margin-bottom		: 40px;
+  position			: fixed ;
+  left				: 525px;
+  top				: 150px;
+  border-radius		: 8px;
+
+ /*background-color	: #999966;
+  color				: white;
+  padding			: 15px 32px;
+  text-align		: center;
+  text-decoration	: none;
+  display			: inline-block;
+  font-size			: 16px;
+  margin			: 4px 2px;
+  cursor			: pointer;*/
+}
+#led_off
+{
+  margin-bottom		: 40px;
+  position			: fixed ;
+  left				: 725px;
+  top				: 150px;
+  border-radius		: 8px;
+
+ /*background-color	: #999966;
+  color				: white;
+  padding			: 15px 32px;
+  text-align		: center;
+  text-decoration	: none;
+  display			: inline-block;
+  font-size			: 16px;
+  margin			: 4px 2px;
+  cursor			: pointer;*/
+}
+
+#motor_on
+{
+  margin-bottom		: 40px;
+  position			: fixed ;
+  left				: 525px;
+  top				: 250px;
+  border-radius		: 8px; 
+ /*background-color	: #999966;
+  color				: white;
+  padding			: 15px 32px;
+  text-align		: center;
+  text-decoration	: none;
+  display			: inline-block;
+  font-size			: 16px;
+  margin			: 4px 2px;
+  cursor			: pointer;*/
+}
+#motor_off
+{
+  margin-bottom		: 40px;
+  position			: fixed ;
+  left				: 725px;
+  top				: 250px;
+  border-radius		: 8px;
+
+ /*background-color	: #999966;
+  color				: white;
+  padding			: 15px 32px;
+  text-align		: center;
+  text-decoration	: none;
+  display			: inline-block;
+  font-size			: 16px;
+  margin			: 4px 2px;
+  cursor			: pointer;*/
+}
+#air_on
+{
+  margin-bottom		: 40px;
+  position			: fixed ;
+  left				: 525px;
+  top				: 350px;
+  border-radius		: 8px;
+
+ /*background-color	: #999966;
+  color				: white;
+  padding			: 15px 32px;
+  text-align		: center;
+  text-decoration	: none;
+  display			: inline-block;
+  font-size			: 16px;
+  margin			: 4px 2px;
+  cursor			: pointer;*/
+}
+#air_off
+{
+  margin-bottom		: 40px;
+  position			: fixed ;
+  left				: 725px;
+  top				: 350px;
+  border-radius		: 8px;
+
+ /*background-color	: #999966;
+  color				: white;
+  padding			: 15px 32px;
+  text-align		: center;
+  text-decoration	: none;
+  display			: inline-block;
+  font-size			: 16px;
+  margin			: 4px 2px;
+  cursor			: pointer;*/
+}
+#updated_home
+{
+	
+  margin-bottom		: 40px;
+  position			: fixed ;
+  left				: 625px;
+  top				: 420px;
+  border-radius		: 8px;
+  text-align		:center;
+  margin-bottom		:none;
+  color				:#00cc00;
+  background-color	: none;
+  font-size			: 24px;
+  background-color	: #ccccff;
+  border-radius		: 8px;
+	
+	
+}
+
+#lcd_on
+{
+  margin-bottom		: 40px;
+  position			: fixed ;
+  left				: 525px;
+  top				: 450px;
+  border-radius		: 8px;
+}
+#lcd_off
+{
+  margin-bottom		: 40px;
+  position			: fixed ;
+  left				: 725px;
+  top				: 450px;
+  border-radius		: 8px;
+	
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+<html>
+
+<head>
+  <title>FOTA </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <style>
+    body {
+      background-image: url(fota.jpg);
+      background-size: cover;
+      background-position: center;
+      font-family: sans-serif;
+    }
+
+    .jumbotron {
+      background: rgba(241, 240, 240, 0.479)
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row bg-info text-white justify-content-center">
+      <h1> FOTA SMART HOME SYSTEM </h1>
+    </div>
+
+    <div class="container">
+      <br />
+      <br />
+      <br />
+
+      <div class="jumbotron">
+        <h1 class="display-6">Hello customer,</h1>
+        <p class="lead">you can use this website to control your Smart home and update
+          code</p>
+        <hr class="my-4" />
+        <div class="row mb-3">
+          <div class="col">
+            <p>Burn new application :</p>
+            <button class="btn btn-danger" type="button"><a class="text-decoration-none text-white"
+                href="script.php?command=1&page_no=1">Press Here</a></button>
+          </div>
+          <div class="col">
+            <p>Control your home :</p>
+            <button class="btn btn-danger" type="button"><a class="text-decoration-none text-white"
+                href="script.php?command=3">Press Here</a></button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <form enctype="multipart/form-data" action="script.php" method="post">
+              <p> Browse hex file from your system : </p>
+
+              <div class="input-group mb-3">
+                <div class="custom-file">
+                  <input name="fileupload" type="file" class="custom-file-input" id="inputGroupFile02" />
+                  <label class="custom-file-label" for="inputGroupFile02"
+                    aria-describedby="inputGroupFileAddon02">Choose file</label>
+                </div>
+                <div class="input-group-append">
+                  <button class="input-group-text" id="inputGroupFileAddon02" type="submit"
+                    formaction="script.php?command=0" name="submit">Upload the Files</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+</body>
+
+</html>

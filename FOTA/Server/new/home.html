@@ -1,0 +1,94 @@
+<head>
+	<title>FOTA </title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+	<style>
+		body {
+			background-image: url(fota2.jpg);
+			background-size: cover;
+			background-position: center;
+			font-family: sans-serif;
+		}
+
+		.jumbotron {
+			background: rgba(241, 240, 240, 0.65);
+		}
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row bg-info text-white justify-content-center">
+			<h1> FOTA SMART HOME SYSTEM </h1>
+		</div>
+		<div class="container">
+			<br />
+			<br />
+			<br />
+			<div class="jumbotron">
+				<h1 class="display-6">Hello customer,</h1>
+				<p class="lead">you can use this website to control your home</p>
+				<hr class="my-4" />
+				<div class="row mb-3">
+					<div class="col text-center">
+						<button class="btn btn-success w-75" type="button"><a class="text-decoration-none text-white"
+								href="home_script.php?status=led_on">
+								<h3>led on</h3>
+							</a></button>
+					</div>
+					<div class="col text-center">
+						<button class="btn btn-danger w-75" type="button"><a class="text-decoration-none text-white"
+								href="home_script.php?status=led_off">
+								<h3>led off</h3>
+							</a></button>
+					</div>
+				</div>
+				<div class="row mb-3">
+					<div class="col text-center">
+						<button class="btn btn-success w-75" type="button"><a class="text-decoration-none text-white"
+								href="home_script.php?status=motor_on">
+								<h3>motor on</h3>
+							</a></button>
+					</div>
+					<div class="col text-center">
+						<button class="btn btn-danger w-75" type="button"><a class="text-decoration-none text-white"
+								href="home_script.php?status=motor_off">
+								<h3>motor off</h3>
+							</a></button>
+					</div>
+				</div>
+				<div class="row mb-3">
+					<div class="col text-center">
+						<button class="btn btn-success w-75" type="button"><a class="text-decoration-none text-white"
+								href="home_script.php?status=air_on">
+								<h3>read gas</h3>
+							</a></button>
+					</div>
+					<div class="col text-center">
+						<button class="btn btn-danger w-75" type="button"><a class="text-decoration-none text-white"
+								href="home_script.php?status=air_off">
+								<h3>read flame</h3>
+							</a></button>
+					</div>
+				</div>
+				<div class="row mb-3">
+					<div class="col text-center">
+						<button class="btn btn-success w-75" type="button"><a class="text-decoration-none text-white"
+								href="home_script.php?status=lcd_on">
+								<h3>New led on</h3>
+							</a></button>
+					</div>
+					<div class="col text-center">
+						<button class="btn btn-danger w-75" type="button"><a class="text-decoration-none text-white"
+								href="home_script.php?status=lcd_off">
+								<h3>New led off</h3>
+							</a></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title> </title>
+		<link rel="stylesheet" href="index_style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+	</head>
+	<body>
+		<div class="form-box">
+			<h1> login Here </h1>
+
+			
+			<form action="index_script.php" method="post">
+				<div class="input-box">
+				<!--https://fontawesome.com/v4.7.0/icon/user-circle-o-->
+				<i class="fa fa-user-circle" ></i>
+				username<input type="user name"  placeholder="user name" name="username" class="text" autocomplete="off" required>
+				</div>
+				<div class="input-box">
+				<!--https://fontawesome.com/v4.7.0/icon/key-->
+				<i class="fa fa-key"></i>
+				password<input type="password" placeholder="password" id="myInput" name="password" required>
+				<span class="eye" onclick="myfunction()">
+					<i id ="hide1" class="fa fa-eye" ></i>
+					<i id ="hide2" class="fa fa-eye-slash" ></i>
+				</span>
+				</div>	
+
+				<button type="submit" class="login-btn" name="submit" >login</button>
+			</form>
+			
+			
+		</div>
+		<script>
+			function myfunction(){
+			var x=document.getElementById("myInput");
+			var y=document.getElementById("hide1");
+			var z=document.getElementById("hide2");
+			
+			if (x.type == 'password')
+			{
+				x.type="text";
+				y.style.display="block";
+				z.style.display="none";
+			}
+			else
+			{
+				x.type="password";
+				y.style.display="none";
+				z.style.display="block";
+			}
+			}
+							
+		
+		</script>
+	</body>
+</html>	

@@ -1,0 +1,78 @@
+<html>
+<!--commnet-->
+<head>  
+<title>FOTA  </title>
+	<link rel="stylesheet" href="start_style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+<h1>
+FOTA SMART HOME SYSTEM
+</h1>
+
+
+<h2>Hello customer<br>
+you can use this website to control your Smart home and update code
+</h2>
+
+<!--
+<div id="led_off">
+<button class="button button1" type="button"><a href="home_script.php?status=led_off"><h3>led off</h3></a></button>
+</div>-->
+<p>
+
+<div id="Burn_new_application">
+Burn new application
+</div>
+
+<div id="button1">
+<button class="button button1" type="button"><a href="script.php?command=1&page_no=1">Press Here</a></button>
+<!--</div>
+<div id="button1">
+<a href="script.php?command=1&page_no=1"  >Press Here </a>
+</div>-->
+</p>
+
+
+<p>
+
+<div id="Control_your_home">
+Control your home
+</div>
+<div id="button2">
+<button class="button button1" type="button"><a href="script.php?command=3">Press Here</a></button>
+<!--<a href="start_script.php?command=3">Press Here</a>-->
+</div>
+</p>
+<br>
+<form enctype="multipart/form-data" action="script.php" method="post">
+
+<div id="Browse">
+Browse hex file from your system :
+</div>
+
+<input name="fileupload" type="file" id="fileupload" size="80"> <br> <!-- browse file from computer   -->
+<button type="submit" id="u_button" formaction="script.php?command=0" name ="submit">Upload the Files</button>
+<!--<input name="fileupload" type="submit" formaction="start_script.php?command=0" id="fileupload" size="80"> <br> --><!-- uplaod to server   -->
+<!--
+<p>
+upload file 
+<a href="start_script.php?command=0">Press Here</a>
+</p>
+-->
+
+<!--
+<button class="file_upload" type="button">
+      <span class="btn_lbl">Browse For File</span>
+      <span class="btn_colorlayer"></span>
+      <input type="file" name="fileupload" id="file_upload" />
+    </button>
+	-->
+</form>
+
+</body>
+
+</html>
